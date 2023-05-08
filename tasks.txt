@@ -1,0 +1,13 @@
+CREATE TABLE public.tasks
+(
+    listid serial primary key,
+    task text,
+    CONSTRAINT listidforeignkey FOREIGN KEY (listid)
+        REFERENCES public.lists (listid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+);
+
+ALTER TABLE IF EXISTS public.tasks
+    OWNER to postgres;

@@ -1,0 +1,10 @@
+CREATE TABLE public.lists
+(
+    userid text NOT NULL,
+    listid bigint unsigned,
+    listname text NOT NULL,
+    PRIMARY KEY (listid)
+);
+
+ALTER TABLE IF EXISTS public.lists
+    OWNER to postgres;
